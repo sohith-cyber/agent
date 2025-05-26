@@ -1,0 +1,29 @@
+services:
+  - type: worker
+    name: telegram-transaction-reader
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: PHONE_NUMBER
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGION
+        value: eu-north-1
+      - key: S3_BUCKET_NAME
+        sync: false
+      - key: S3_FILE_KEY
+        value: transactions.xlsx
+      - key: S3_SESSION_KEY
+        value: telegram_session.session
+      - key: BOT_ID
+        value: "8056410079"
+      - key: CHECK_INTERVAL
+        value: "300"
