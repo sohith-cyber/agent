@@ -3,7 +3,7 @@ name: Daily Transaction Processing
 on:
   schedule:
     # Run every day at 9:00 AM IST (3:30 AM UTC)
-   - cron: '31 28 * * *'
+   - cron: '20 17 * * *'
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
